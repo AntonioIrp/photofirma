@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2014 Antonio Isaac Roldán Peña.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Public License v3.0
+  which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/gpl.html
+  
+  Contributors:
+      Antonio Isaac Roldán Peña - initial API and implementation
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ActivityMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#404040" >
+
+    <TextView
+        android:id="@+id/mainAppAboutOf"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="#aca2b1"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onAboutPage"
+        android:text="@string/activity_main_about_of_text_view"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/mainAppSignUp"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_above="@id/mainAppAboutOf"
+        android:background="#aa7cc1"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onSignUpPage"
+        android:text="@string/activity_main_sign_up_text_view"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/mainAppLogin"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_above="@id/mainAppSignUp"
+        android:background="#7e69b2"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="onLoginPage"
+        android:text="@string/activity_main_login_text_view"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/mainAppLogin" >
+
+        <ImageView
+            android:id="@+id/mainAppPhotoBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ballon"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/mainAppFooter"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp" >
+
+            <ImageView
+                android:id="@+id/ujalogo"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ujalogow" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/ujalogo" >
+
+                <TextView
+                    android:id="@+id/mainAppEPS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_app_eps_name"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+
+                <RelativeLayout
+                    android:id="@+id/mainAppLine"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/mainAppEPS"
+                    android:background="#ffffff" >
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/mainAppUName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mainAppLine"
+                    android:text="@string/main_app_u_name"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mainAppData"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/mainAppFooter" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/mainAppAuthor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_app_author"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/mainAppTutor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_app_tutor"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mainAppHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/mainAppPFCName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/main_app_pfc_name"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="17sp" />
+
+            <RelativeLayout
+                android:id="@+id/mainAppBlankLine1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/mainAppPFCName"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#ffffff" >
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/mainAppIngTel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mainAppBlankLine1"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/main_app_ing_tel"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/mainAppDepartment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mainAppIngTel"
+                android:layout_centerInParent="true"
+                android:text="@string/main_app_department"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

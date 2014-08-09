@@ -1,0 +1,333 @@
+<!--
+  Copyright (c) 2014 Antonio Isaac Roldán Peña.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Public License v3.0
+  which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/gpl.html
+  
+  Contributors:
+      Antonio Isaac Roldán Peña - initial API and implementation
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"> <!--IMPORTANT otherwise backgrnd img. will not fill the whole screen -->
+
+
+<RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#404040"
+    android:fadingEdge="none"
+    android:scrollbars="vertical"
+     >
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/cameraActivityErrorHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="#FF3B30"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <TextView
+            android:id="@+id/cameraActivityErrorTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/camera_activity_error_header_text_view"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textSize="34sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraActivityErrorUploadHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="#FF3B30"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <TextView
+            android:id="@+id/cameraActivitiyErrorUploadText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/camera_activity_error_upload_text_view"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textSize="34sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraActivitySuccesUploadHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="#87FC70"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <TextView
+                android:id="@+id/cameraActivitySuccesUploadText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/camera_activity_success_upload_text_view"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="34sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraActivityUploadingHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="#87FC70"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
+
+            <ProgressBar
+                android:id="@+id/cameraActivityLoader"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="110dp" />
+
+            <TextView
+                android:id="@+id/cameraActivityUploadingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/cameraActivityLoader"
+                android:gravity="center"
+                android:text="@string/camera_activity_uploading_text"
+                android:textColor="#ffffff"
+                android:textSize="34sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraActivitySuccessHeaderTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="#87FC70"
+        android:clickable="true"
+        android:onClick="onSubmitPhoto"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#87FC70" >
+
+            <TextView
+                android:id="@+id/cameraActivitySuccesText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="@string/camera_activity_success_header_text_view"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="34sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraActivityInfoHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="#34AADC"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <TextView
+            android:id="@+id/cameraAcitivtiyInfoTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/camera_activity_info_header_text_view"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textSize="34sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraActivityHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraActivityBlankSpace"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/cameraActivityHeader"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraActivityZone"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/cameraActivityBlankSpace"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/cameraActivityCameraPhotoInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/camera512b"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/cameraActivityCameraPhotoError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/camera512r"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/cameraActivityCameraPhotoSuccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/camera512g"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/cameraActivityCameraPhotoTap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:clickable="true"
+                android:onClick="onTakeAPhoto"
+                android:src="@drawable/camera512" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraActivityBlankSpace2"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:layout_below="@id/cameraActivityZone"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraActivityInstructions"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cameraActivityBlankSpace2"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/cameraActivityIntruction1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="@string/camera_activity_instrucctions_one"
+            android:textColor="#ffffff"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/cameraActivityIntruction2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:text="@string/camera_activity_instrucctions_two"
+            android:textColor="#ffffff"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/cameraActivityIntruction3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:text="@string/camera_activity_instrucctions_three"
+            android:textColor="#ffffff"
+            android:textSize="32sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cameraActivityCancelHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="#FF3B30"
+        android:clickable="true"
+        android:onClick="onCancel"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <TextView
+                android:id="@+id/cameraActivityCancelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/camera_activity_cancel_header_text_view"
+                android:textColor="#ffffff"
+                android:textSize="28sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+
+</ScrollView>
+
+
+
+

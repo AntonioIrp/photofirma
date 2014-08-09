@@ -1,0 +1,307 @@
+<!--
+  Copyright (c) 2014 Antonio Isaac Roldán Peña.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Public License v3.0
+  which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/gpl.html
+  
+  Contributors:
+      Antonio Isaac Roldán Peña - initial API and implementation
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fillViewport="true" >
+
+ <!--IMPORTANT otherwise backgrnd img. will not fill the whole screen -->
+
+<RelativeLayout
+    android:id="@+id/aboutOfActivityMadeBy"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/aboutOfHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="#aa7cc1"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <ImageView
+                android:id="@+id/aboutOfHelpIcon"
+                android:layout_width="45dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:onClick="onHelpMe"
+                android:src="@drawable/helpicon3" />
+
+            <TextView
+                android:id="@+id/aboutOfBackToMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="7dp"
+                android:layout_marginLeft="7dp"
+                android:clickable="true"
+                android:onClick="onBackToMain"
+                android:text="@string/about_of_back_to_main_text_view"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="19sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/aboutOfTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/about_of_title_text_view"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="27sp" />
+
+            <ImageView
+                android:id="@+id/aboutOfBackToMainImage"
+                android:layout_width="45dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:onClick="onBackToMain"
+                android:src="@drawable/arrowsrightback" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/aboutOfTwitterButton"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/aboutOfHeader"
+        android:layout_marginTop="6dp"
+        android:background="#4099FF"
+        android:clickable="true"
+        android:onClick="onTwitterFollow"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true" >
+
+                <ImageView
+                    android:id="@+id/aboutOfTwitterLogo"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/twitterlogo" />
+
+                <TextView
+                    android:id="@+id/aboutOfFollowTwitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/about_of_twitter_follow_text_view"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/aboutOfEmailButton"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/aboutOfTwitterButton"
+        android:layout_marginTop="6dp"
+        android:background="#87FC70"
+        android:onClick="onDeveloperEmail"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/aboutOfEmailTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:text="@string/about_of_email_text_view"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="17sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/aboutOfMyGithub"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/aboutOfEmailButton"
+        android:layout_marginTop="6dp"
+        android:background="#4A4A4A"
+        android:clickable="true"
+        android:onClick="onGoToMyGitHub"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" >
+
+                <TextView
+                    android:id="@+id/aboutOfMyGitHubText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="7dp"
+                    android:text="@string/about_of_my_git_hub_text_view"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/aboutOfVersionButton"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/aboutOfMyGithub"
+        android:layout_marginTop="6dp"
+        android:background="#aa7cc1"
+        android:clickable="true"
+        android:onClick="onVersionClick"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/aboutOfVersionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:text="@string/about_of_version_text_view"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/aboutOfConfigLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aboutOfVersionButton"
+        android:layout_marginTop="7dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/aboutOfIpTextField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/about_of_server_ip_hint"
+                android:imeOptions="actionDone"
+                android:inputType="text" >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/aboutOfIpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onSubmitConfiguration"
+                android:text="@string/about_of_ip_button_text_view" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/aboutOfFooter"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignTop="@id/aboutOfConfigLayout"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/aboutOfFooterTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/about_of_footer_text_view"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#aa7cc1"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+
+</ScrollView>
+
+
+
+
+
+

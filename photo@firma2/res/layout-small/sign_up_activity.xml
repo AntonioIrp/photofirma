@@ -1,0 +1,274 @@
+<!--
+  Copyright (c) 2014 Antonio Isaac Roldán Peña.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the GNU Public License v3.0
+  which accompanies this distribution, and is available at
+  http://www.gnu.org/licenses/gpl.html
+  
+  Contributors:
+      Antonio Isaac Roldán Peña - initial API and implementation
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fillViewport="true" >
+
+<RelativeLayout 
+    
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <LinearLayout
+        android:id="@+id/signUpActivityHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="#aa7cc1"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent" >
+
+            <TextView
+                android:id="@+id/signUpActivitityTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/sign_up_activity_title_text_view"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="27sp" />
+
+            <TextView
+                android:id="@+id/signUpActivityBackToMainTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="7dp"
+                android:clickable="true"
+                android:onClick="onBackToMain"
+                android:text="@string/sign_up_activity_back_to_main_text_view"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="19sp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/signUpActivityBackToMainImage"
+                android:layout_width="45dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:onClick="onBackToMain"
+                android:src="@drawable/arrowsleftback" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/signUpActivityForm"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/signUpActivityHeader"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/signUpActivityUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:hint="@string/sign_up_activity_username_hint"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/signUpActivityEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:hint="@string/sign_up_activity_email_hint"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/signUpActivityPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:hint="@string/sign_up_activity_password_hint"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/signUpActivityVPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:hint="@string/sign_up_activity_v_password_hint"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+
+        <CheckBox
+            android:id="@+id/signUpActivityIAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_activity_i_accept" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/signUpActivityDoSignupError"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/signUpActivityForm"
+        android:layout_marginTop="5dp"
+        android:background="#FF3B30"
+        android:clickable="true"
+        android:onClick="onDoSignup"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/signUpActivityDoSignupErrorText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/login_activity_error_conn_text_view"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/doRetryTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/do_retry_text_view"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/signUpDoSignUpButton"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/signUpActivityForm"
+        android:layout_marginTop="5dp"
+        android:background="#aa7cc1"
+        android:clickable="true"
+        android:onClick="onDoSignup"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/signUpActivitySignUpTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/sign_up_activity_signup_text_view"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:id="@+id/signUpActivityProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:visibility="invisible" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <ProgressBar
+                        android:id="@+id/progressBarSign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/signUpActivityConectingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/progressBarSign"
+                        android:text="@string/login_activity_connecting_text_view"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="#ffffff" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/signupActivityFooter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/signUpDoSignUpButton"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/signUpActivityFooterText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:clickable="true"
+                android:onClick="onTermsOfUse"
+                android:text="@string/sign_up_activity_footer_text_view"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#aa7cc1"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+</ScrollView>
